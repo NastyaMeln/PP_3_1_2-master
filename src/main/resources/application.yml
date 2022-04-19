@@ -1,0 +1,33 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  mvc:
+    view:
+      prefix: /templates
+      suffix: .html
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/my_db?characterEncoding=utf8&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+    username: bestuser
+    password: bestuser
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        connection:
+          useUnicode: true
+          characterEncoding: UTF-8
+          charSet: UTF-8
+        format_sql: true
+    show-sql: true
+
+
+
+
