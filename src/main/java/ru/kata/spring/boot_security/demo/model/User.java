@@ -112,6 +112,21 @@ public class User implements UserDetails {
         }
         return stringRoles;
     }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && username.equals(user.username) &&
+                age.equals(user.age) &&  password.equals(user.password) &&
+                roles.equals(user.roles);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, lastName, email, username, password, roles);
+    }
 
     @Override
     public String toString() {
